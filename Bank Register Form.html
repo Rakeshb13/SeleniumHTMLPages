@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Account Registration</title>
+<link rel="stylesheet" href="styles123.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form label {
+  font-weight: bold;
+  color: #666;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="submit"],
+form textarea,
+form input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form input[type="radio"] {
+  margin: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#displayInfo {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#displayInfo h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+#displayInfo p {
+  margin: 5px 0;
+}
+	
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Bank Account Registration</h2>
+  <form id="bankAccountForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    
+    <label for="city">City:</label><br>
+    <input type="text" id="city" name="city" required><br>
+    
+    <label for="district">District:</label><br>
+    <input type="text" id="district" name="district" required><br>
+    
+    <label for="state">State:</label><br>
+    <input type="text" id="state" name="state" required><br>
+    
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br>
+    
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I accept the terms and conditions</label><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="displayInfo"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

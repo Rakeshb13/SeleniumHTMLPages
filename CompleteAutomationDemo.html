@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-gTlCvgcT5gY03nUBng8mkpQpff7ksho+Gd09hpFt3ZgyRqDSYUzhgWRydRk2z2lG2SwNivJ6GZmN/suMkA33wA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+	
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+span {
+	font-size: 12px;
+}
+
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 5px 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #ffffff;
+	background-color: #1176b7;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 30px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: ;
+	background: ;
+	background-color:#1176b7 ;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: blue;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+	</style>
+</head>
+
+<body>
+    <h2>Selenium Practice Demo Site By Rakesh</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form>
+                <h1>For Examples</h1></br>
+                <span>Click on the below Buttons..</span></br>
+                <button type="button" id="open-windows-button">Open Windows</button></br>
+		<button type="button" id="notificationButton">Notification Pop-up</button></br>
+		<span>Click on the below Links..</span>
+		<a href="Notification and DropDowns.html">Drop Downs link</a>
+		<a href="Bank Register Form.html">Bank Register Form</a>
+		
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form>
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="https://facebook.com/" target="_blank" class="social">FaceBook<i class="fab fa-facebook-f"> - </i></a>
+                    <a href="https://www.google.com/" target="_blank" class="social">Google<i class="fab fa-google-plus-g"> - </i></a>
+                    <a href="https://www.instagram.com/?hl=en" target="_blank" class="social">Instagram<i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" id="Email" name="email" class="EnterEmail"placeholder="Email" />
+                <input type="password" id="Pass" name="password" class="password" placeholder="Password" />
+                <a href="https://www.selenium.dev/blog/" target="_blank" >Forgot your password?</a>
+                <button type="submit" id="clickOnMe" class="click onbutton">Sign In</button></br>
+		<div id="loginMessage"></div>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>For Login Page</h1>
+                    <p>To Enter Email and Password </p>
+                    <button class="ghost" id="signIn">Click Here</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Login Credentials</h1></br>
+                    <li>Email : admin@gmail.com</li>
+		    <li>Password : admin </li></br>
+		    <h1>For Examples</h1>
+                    <p>Like Multiple Windows, Notification Pop-up and others </p>
+                    <button class="ghost" id="signUp" title="Click here to find more Examples">Click Here</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created to learn  <i class="fa fa-heart"></i> 
+            <a target="_blank" href="https://www.selenium.dev/">Selenium</a>
+            - To Navigate to our Website click 
+            <a target="_blank" href="https://www.selenium.dev/">here</a>.
+        </p>
+    </footer>
+
+	<script>
+	
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+ document.getElementById('open-windows-button').addEventListener('click', function() {
+      openMultipleWindows();
+    });
+
+    function openMultipleWindows() {
+      const websites = [
+        { url: 'https://www.microsoft.com', width: 400, height: 400, x: 50, y: 800 },
+        { url: 'https://www.mozilla.org', width: 400, height: 400, x: 500, y: 1200 },
+        { url: 'https://www.apple.com', width: 400, height: 400, x: 1000, y: 1400 }
+      ];
+
+      websites.forEach(function(site) {
+        const windowFeatures = `width=${site.width},height=${site.height},left=${site.x},top=${site.y}`;
+        window.open(site.url,'_blank', windowFeatures);
+      });
+    }
+
+ document.addEventListener('DOMContentLoaded', function() {
+        
+        const emailInput = document.querySelector('.sign-in-container input[type="email"]');
+        const passwordInput = document.querySelector('.sign-in-container input[type="password"]');
+        const signInForm = document.querySelector('.sign-in-container form');
+	  const loginMessage = document.getElementById('loginMessage');
+
+
+        signInForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (email === 'admin@gmail.com' && password === 'admin') {
+               
+                setTimeout(() => {
+                   loginMessage.innerText = 'Valid Email and Password, Login successful...';
+                }, 3000);
+            } else {
+                    loginMessage.innerText = 'Invalid email or password, try again...';
+            }
+        });
+
+            if ('Notification' in window) {
+                const notificationButton = document.getElementById('notificationButton');
+
+                notificationButton.addEventListener('click', () => {
+                  
+                    Notification.requestPermission()
+                        .then((permission) => {
+                            if (permission === 'granted') {
+                                alert('Notification permission granted!');
+                            } else if (permission === 'denied') {
+                                alert('Notification permission denied. You can change this in your browser settings.');
+                            }
+                        });
+                });
+            } else {
+                alert('Your browser does not support notifications.');
+            }
+        });
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+	</script>
+
+</body>
+
+</html>
