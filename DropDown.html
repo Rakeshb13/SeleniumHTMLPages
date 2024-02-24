@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-select Dropdown</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+
+    select {
+        padding: 50px;
+        font-size: 20px;
+        border: 5px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        transition: border-color 0.3s;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    option {
+        background-color: #fff;
+        color: #333;
+    }
+
+    option:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: blue;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+</style>
+</head>
+<body style="text-align:center" >
+<h2>Create Your Cricket Team By Selecting Options From Drop Down</h2>
+<select id="dropdown1" multiple="true" onchange="moveToNextDropdown(this, 'dropdown2')">
+    <option value="Select" ">--- Select Your Cricket Team ---</option>
+ <option>--------------------------------------------</option>
+    <option value="Virat Kohli">Virat Kohli</option>
+    <option value="Rohit Sharma">Rohit Sharma</option>
+    <option value="Hardik Pandya">Hardik Pandya</option>
+    <option value="Ravichandran Ashwin">Ravichandran Ashwin</option>
+    <option value="KL Rahul">KL Rahul</option>
+    <option value="Jasprit Bumrah">Jasprit Bumrah</option>
+<option value="Ravindra Jadeja">Ravindra Jadeja</option>
+<option value="Mohammad Shami">Mohammad Shami</option>
+<option value="Rishabh Pant">Rishabh Pant</option>
+<option value="Axar Patel">Axar Patel</option>
+<option value="Shreyas Lyer">Shreyas Lyer</option>
+<option value="Mohammed Siraj">Mohammed Siraj</option>
+<option value="SuryaKumar Yadav">SuryaKumar Yadav</option>
+<option value="Shubman Gill">Shubman Gill</option>
+<option value="Yuzvendra Chahal">Yuzvendra Chahal</option>
+<option value="Kuldeep Yadav">Kuldeep Yadav</option>
+<option value="Sanju Samson">Sanju Samson</option>
+
+</select>
+
+<select id="dropdown2" multiple="true" style="display: none;">
+    <option value="" >--- Selected Cricket Team ---</option>
+<option>--------------------------------------------</option>
+</select>
+
+<script>
+function moveToNextDropdown(currentDropdown, nextDropdownId) {
+    var nextDropdown = document.getElementById(nextDropdownId);
+    var selectedOption = currentDropdown.value;
+
+    if(selectedOption !== "") {
+        // Move the selected option to the next dropdown
+        var optionElement = document.createElement('option');
+        optionElement.textContent = selectedOption;
+        optionElement.value = selectedOption;
+        nextDropdown.appendChild(optionElement);
+
+        // Remove the selected option from the first dropdown
+        currentDropdown.removeChild(currentDropdown.options[currentDropdown.selectedIndex]);
+
+        // Show the next dropdown if it's hidden
+        if(nextDropdown.style.display === 'none') {
+            nextDropdown.style.display = 'inline-block';
+        }
+    }
+}
+</script>
+ <footer>
+        <p>
+            Created By Rakesh to learn  <i class="fa fa-heart"></i> 
+            <a target="_blank" href="https://www.selenium.dev/">Selenium</a>
+            - To Navigate to our Website click 
+            <a target="_blank" href="https://www.selenium.dev/">here</a>.
+        </p>
+    </footer>
+</body>
+</html>
