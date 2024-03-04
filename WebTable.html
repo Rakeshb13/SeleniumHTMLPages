@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Products</title>
+    <style>
+        /* Basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        .left {
+            flex: 1;
+            padding: 20px;
+        }
+        .right {
+            flex: 1;
+            padding: 20px;
+        }
+        /* Image styling */
+        .product-image {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: blue;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <!-- Left Section: Table of Mobile Products -->
+        <h2> Top Mobile Lists</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Model</th>
+		    <th>Color</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> 
+                    <td name="brand" >Apple</td>
+                    <td class="model">Iphone 15 Pro</td>
+		    <td value="color">Black</td>
+                    <td id="price" > 1,30,299</td>
+                </tr>
+                <tr> 
+                    <td name="brand" >Redmi</td>
+                    <td class="model" >Note 12 Pro</td>
+		     <td value="color">Blue</td>
+                    <td id="price" >17,000</td>
+                </tr>
+		<tr> 
+                    <td name="brand" >Nokia</td>
+                    <td class="model">Nokia g42</td>
+                     <td value="color">Black</td>
+		    <td id="price" >22,999</td>
+                </tr>
+		<tr> 
+                    <td name="brand" >Samsung</td>
+                    <td class="model" >Samsung Galaxy s24</td>
+		     <td value="color">White</td>
+                    <td id="price" >79,999</td>
+                </tr>
+		<tr> 
+                    <td name="brand">Apple</td>
+                    <td class="model" >Iphone 15</td>
+                     <td value="color">Green</td>
+		    <td id="price" >69,999</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <div class="right">
+        <!-- Right Section: Image -->
+        <h2>Mobile Image</h2>
+        <img src="BEST-CAMERA-PHONES-1-1024x569.png" alt="Mobile Image" class="product-image">
+    </div>
+</div>
+ <footer>
+        <p>
+            Created By Rakesh to learn  <i class="fa fa-heart"></i> 
+            <a target="_blank" href="https://www.selenium.dev/">Selenium</a>
+            - To Navigate to our Website click 
+            <a target="_blank" href="https://www.selenium.dev/">here</a>.
+        </p>
+    </footer>
+
+</body>
+</html>
