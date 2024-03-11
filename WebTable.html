@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="Rakesh">
-     <!-- Created By Rakesh to Practice Selenium -->
+    <meta name="Rakesh">
+    <!-- Created By Rakesh to Practice Selenium -->
     <title>Mobile Products</title>
     <style>
         /* Basic styling for layout */
@@ -12,16 +12,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .container {
             display: flex;
-            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
         }
-        .left {
-            flex: 1;
-            padding: 20px;
-        }
-        .right {
+        .left, .right {
             flex: 1;
             padding: 20px;
         }
@@ -29,45 +29,44 @@
         .product-image {
             max-width: 100%;
             height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            border: 1px solid #ddd; /* Add border to the table */
         }
         th, td {
-            padding: 8px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
         th {
             background-color: #f2f2f2;
         }
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: blue;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
-   #preloader {
+        .highlight {
+            background-color: #ffe066; /* Highlight color */
+        }
+        /* Footer styling */
+        footer {
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #3c97bf;
+            text-decoration: none;
+        }
+        #preloader {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -76,77 +75,91 @@ footer a {
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999; /* Ensure preloader is on top */
+            z-index: 9999;
         }
-
         #main-content {
-            display: none; /* Hide main content initially */
+            display: none;
+        }
+        /* Sale message styling */
+        #sale-message {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            animation: blink 1s infinite alternate; /* Blink animation */
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
     </style>
 </head>
-<body style="overflow: hidden;"> <!-- Hide scrolling until preloader disappears -->
+<body>
     <div id="preloader">Created by: Rakesh</div>
     <div id="main-content">
-           </div>
-
-
-<div class="container">
-    <div class="left">
-        <!-- Left Section: Table of Mobile Products -->
-        <h2> Top Mobile Lists</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Brand</th>
-                    <th>Model</th>
-		    <th>Color</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr> 
-                    <td name="brand" >Apple</td>
-                    <td class="model">Iphone 15 Pro</td>
-		    <td value="color">Black</td>
-                    <td id="price" > 1,30,299</td>
-                </tr>
-                <tr> 
-                    <td name="brand" >Redmi</td>
-                    <td class="model" >Note 12 Pro</td>
-		     <td value="color">Blue</td>
-                    <td id="price" >17,000</td>
-                </tr>
-		<tr> 
-                    <td name="brand" >Nokia</td>
-                    <td class="model">Nokia g42</td>
-                     <td value="color">Black</td>
-		    <td id="price" >22,999</td>
-                </tr>
-		<tr> 
-                    <td name="brand" >Samsung</td>
-                    <td class="model" >Samsung Galaxy s24</td>
-		     <td value="color">White</td>
-                    <td id="price" >79,999</td>
-                </tr>
-		<tr> 
-                    <td name="brand">Apple</td>
-                    <td class="model" >Iphone 15</td>
-                     <td value="color">Green</td>
-		    <td id="price" >69,999</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
+        <!-- Sale message -->
+        <div id="sale-message">Hurry! Limited time sale - Up to 50% off on selected items</div>
+        <div class="container">
+            <div class="left">
+                <!-- Left Section: Table of Mobile Products -->
+                <h2>Top Mobile Lists</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Color</th>
+                            <th>Price in Dollar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr> 
+                            <td name="brand">Apple</td>
+                            <td class="model">Iphone 15 Pro</td>
+                            <td value="color">Black</td>
+                            <td class="price">13029</td>
+                        </tr>
+                        <tr> 
+                            <td name="brand">Redmi</td>
+                            <td class="model">Note 12 Pro</td>
+                            <td value="color">Blue</td>
+                            <td class="price">1700</td>
+                        </tr>
+                        <tr> 
+                            <td name="brand">Nokia</td>
+                            <td class="model">Nokia g42</td>
+                            <td value="color">Black</td>
+                            <td class="price">2299</td>
+                        </tr>
+                        <tr> 
+                            <td name="brand">Samsung</td>
+                            <td class="model">Samsung Galaxy s24</td>
+                            <td value="color">White</td>
+                            <td class="price">7999</td>
+                        </tr>
+                        <tr> 
+                            <td name="brand">Apple</td>
+                            <td class="model">Iphone 15</td>
+                            <td value="color">Green</td>
+                            <td class="price">6999</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="right">
+                <!-- Right Section: Image -->
+                <h2>Mobile Image</h2>
+                <img src="BEST-CAMERA-PHONES-1-1024x569.png" alt="Mobile Image" class="product-image">
+            </div>
+        </div>
     </div>
-    <div class="right">
-        <!-- Right Section: Image -->
-        <h2>Mobile Image</h2>
-        <img src="BEST-CAMERA-PHONES-1-1024x569.png" alt="Mobile Image" class="product-image">
-    </div>
-</div>
-<script>
- window.onload = function() {
-            var creatorName = "Your Name";
+    <footer>
+       
+  </footer>
+    <script>
+        window.onload = function() {
             var preloader = document.getElementById("preloader");
             var mainContent = document.getElementById("main-content");
 
@@ -154,11 +167,30 @@ footer a {
             setTimeout(function() {
                 preloader.style.display = "none";
                 mainContent.style.display = "block"; // Show main content
-                document.body.style.overflow = "visible"; // Allow scrolling
             }, 2000);
+
+            // Function to generate random price for a product
+            function generateRandomPrice() {
+                return Math.floor(Math.random() * 1000) + 1000; // Generate a random price between 1000 and 10000
+            }
+
+            // Change prices of two random products
+            var prices = document.querySelectorAll(".price");
+            var changedPrices = []; // Store the indices of changed prices
+            for (var i = 0; i < 2; i++) {
+                var randomIndex = Math.floor(Math.random() * prices.length);
+                prices[randomIndex].classList.add("highlight"); // Highlight the changed price
+                prices[randomIndex].textContent = generateRandomPrice(); // Update the price
+                changedPrices.push(randomIndex);
+            }
+
+            // Remove highlight from changed prices after 3 seconds
+            setTimeout(function() {
+                changedPrices.forEach(function(index) {
+                    prices[index].classList.remove("highlight");
+                });
+            }, 3000);
         };
-
-</script>
-
+    </script>
 </body>
 </html>
