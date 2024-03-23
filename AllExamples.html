@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All HTML Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-side, .middle-side, .right-side {
+            width: 30%;
+        }
+
+        section {
+            margin-bottom: 10px;
+        }
+
+        .form-section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .form-section h2 {
+            margin-top: -4px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .disabled {
+            background-color: #f4f4f4;
+            color: #777;
+            cursor: not-allowed;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="left-side">
+    <section class="form-section">
+        <h2>Text Fields</h2>
+        <input type="text" id="username"placeholder="User Name">
+        <br>
+        <input type="password" name="Password" placeholder="Password">
+        <br>
+        <input type="text" class="iamdisabled"placeholder="Disabled Text Feild" disabled>
+    </section>
+
+    <section class="form-section">
+        <h2>Checkboxes</h2>
+        <input type="checkbox" id="checkbox1" name="checkbox1">
+        <label for="checkbox1">Accept T & C </label>
+        
+    </section>
+
+    <section class="form-section">
+        <h2>Radio Buttons</h2>
+        <input type="radio" id="radio1" name="radio" value="option1">
+        <label for="radio1">Male</label>
+        <br>
+        <input type="radio" id="radio2" name="radio" value="option2">
+        <label for="radio2">Female</label>
+        <br>
+        <input type="radio" id="radio3" name="radio" value="option2">
+        <label for="radio2">Others</label>
+        <br>
+    </section>
+</div>
+
+<div class="middle-side">
+    <section class="form-section">
+        <h2>Links</h2>
+        <a href="https://www.example.com">Example Link 1</a>
+        
+        <a href="https://www.example.com">Example Link 2</a>
+        
+        <a href="https://www.example.com">Example Link 3</a>
+<br><br>
+	<div id="customLink" style="color: blue; text-decoration: underline; cursor: pointer;">Click Here</div>
+    </section>
+    
+    <section class="form-section">
+        <h2>Image</h2>
+        <img src="Seleniumlogo.png" alt="Placeholder Image" width="200" height="100">
+    </section>
+    
+    <section class="form-section">
+        <h2>Web Table</h2>
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>john@gmail.com</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>jane@gmail.com</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </section>
+</div>
+
+<div class="right-side">
+    <section class="form-section">
+        <h2>Dropdowns</h2>
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="tesla">Tesla</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br>
+        <select multiple="true">
+            <option value="volvo">Volvo</option>
+            <option value="tesla">Tesla</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+    </section>
+
+    <section class="form-section">
+        <h2>Textareas</h2>
+        <textarea rows="4" placeholder="Enter your message"></textarea>
+       
+    </section>
+
+    <section class="form-section">
+        <h2>Buttons</h2>
+        <!-- Submit Button -->
+        <input type="submit" id="submitButton" value="Submit">
+       
+        <!-- Click Me Button -->
+        <button id="clickMeButton">Click Me</button>
+  
+        <!-- Disabled Button -->
+        <button class="disabled" disabled onclick="alert('Disabled button clicked!')">Disabled Button</button>
+    </section>
+</div>
+
+<script>
+document.getElementById("customLink").addEventListener("click", function() {
+    window.location.href = "https://example.com"; // Replace with your desired URL
+});
+
+// Add event listener for the Submit button
+document.getElementById("submitButton").addEventListener("click", function() {
+    alert("Submit button clicked!");
+});
+
+// Add event listener for the Click Me button
+document.getElementById("clickMeButton").addEventListener("click", function() {
+    confirm("Click Me button clicked!");
+});
+</script>
+
+</body>
+</html>
