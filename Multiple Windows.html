@@ -1,0 +1,62 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Multiple Windows</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+    }
+    #header {
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      font-size: 24px;
+    }
+    #open-windows-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+ 
+  <button id="open-windows-button">Open Windows</button>
+
+  <script>
+    document.getElementById('open-windows-button').addEventListener('click', function() {
+      openMultipleWindows();
+    });
+
+    function openMultipleWindows() {
+      const websites = [
+        { url: 'https://www.microsoft.com', width: 400, height: 400, x: 50, y: 800 },
+        { url: 'https://www.mozilla.org', width: 400, height: 400, x: 500, y: 1200 },
+        { url: 'https://www.apple.com', width: 400, height: 400, x: 1000, y: 1400 }
+      ];
+
+      websites.forEach(function(site) {
+        const windowFeatures = `width=${site.width},height=${site.height},left=${site.x},top=${site.y}`;
+        window.open(site.url, '_blank', windowFeatures);
+      });
+    }
+  </script>
+</body>
+</html>
